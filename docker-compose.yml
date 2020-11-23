@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  web:
+    privileged: true
+    devices:
+    - "/dev/fuse:/dev/fuse"
+    build: .
+    image: php-74-apache
+    container_name: app-apache
+    restart: always
+    expose:
+      - 80
+    ports:
+      - 80:80
+      - 443:443
